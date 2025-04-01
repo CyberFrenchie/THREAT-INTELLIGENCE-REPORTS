@@ -1,5 +1,6 @@
-theme: Hacker
-title: Threat Intelligence Reports
-description: A collection of my threat intelligence reports.
-show_excerpts: true
-permalink: /:title/
+remote_theme: mmistakes/minimal-mistakes
+title: "Threat Intelligence Reports"
+description: "Research and analysis of cyber threats."
+plugins:
+  - jekyll-include-cache
+  - jekyll-archives
