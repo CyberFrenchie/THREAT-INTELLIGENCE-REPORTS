@@ -4,3 +4,4 @@ description: "Research and analysis of cyber threats."
 plugins:
   - jekyll-include-cache
   - jekyll-archives
+  - jekyll-feed
