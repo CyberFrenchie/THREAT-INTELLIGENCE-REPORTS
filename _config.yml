@@ -2,3 +2,4 @@ theme: minima
 title: Threat Intelligence Reports
 description: A collection of my threat intelligence reports.
 show_excerpts: true
+permalink: /:title/
