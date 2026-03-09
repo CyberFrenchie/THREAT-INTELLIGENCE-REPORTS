@@ -34,7 +34,9 @@ The app contains a hardcoded Telegram Bot API token that actively exfiltrates de
 
 Critically, the app's own VPN tunnel **deliberately excludes the operator's traffic** from encryption, meaning the user's real IP address is always visible to the operator — directly contradicting the product's privacy claims.
 
-**Overall Assessment: CRITICAL — Active spyware. Uninstall immediately.**
+**Overall Assessment: CRITICAL.** This application is classified as active spyware and should be treated as hostile software. All users of `com.premium_vpn.mobile` should be considered affected; full remediation guidance is provided in Section 8.
+
+> **Attribution Notice:** Individual attribution in this report is based solely on publicly accessible open-source intelligence (OSINT) derived from data embedded in the publicly distributed application and confirmed via the application's own live API endpoints. This constitutes an analytical assessment and is not a legal determination.
 
 ---
 
@@ -94,7 +96,7 @@ Every device fingerprint, VPN log, and installation event collected from users w
 | `7969799253` | Telegram Bot ID | Exfiltration bot ID |
 | `-5133544759` | Telegram Group ID | Private exfiltration group |
 | `363585796` | Telegram User ID | Operator (Ramzil Galimov / @Ramsy_r) |
-| `AIzaSyBY9_oiHWQ1sMgVGF1T2QFBCloWEi120JY` | Firebase API Key | Hardcoded in binary |
+| `AIzaSy[REDACTED]` | Firebase API Key | Hardcoded in binary — redacted to prevent misuse |
 
 ---
 
@@ -178,7 +180,7 @@ All traffic to `hifixie.com` (the operator's API) and `app-measurement.com` (Goo
 - Google Analytics tracking bypasses the tunnel
 - The operator **always knows the user's real IP** — the VPN provides no privacy from the operator at all
 
-This is not a configuration error. The rules are deliberate.
+This is assessed as deliberate operator behaviour rather than a misconfiguration — the specificity of the domain-level bypass rules and their inclusion in the VPN configuration returned by the operator's own API is consistent with intentional design.
 
 ---
 
@@ -210,7 +212,7 @@ intentFilter.addDataScheme("package");
 registerReceiver(aVar, intentFilter);
 ```
 
-The app registers a broadcast receiver for every application installed on the device. There is no legitimate VPN functionality that requires monitoring app installations.
+The app registers a broadcast receiver for every application installed on the device. No legitimate VPN purpose has been identified by this analyst that would require monitoring of package installation events on the host device.
 
 ---
 
@@ -259,7 +261,7 @@ DNS:api.hifixie.com, DNS:grafana.hifixie.com
 |-----|------|------|
 | CVE-2024-9264 | **9.9 Critical** | RCE via DuckDB SQL injection |
 | CVE-2025-2703 | 6.8 Medium | Cross-Site Scripting |
-| CVE-2025-61725 | Medium | Information Exposure |
+| CVE-2025-61725 | Unscored — severity unconfirmed | Information Exposure |
 | CVE-2024-8118 | Medium | Permissions Bypass in Alerting |
 
 ---
@@ -284,6 +286,21 @@ Fields captured include `latitude`, `longitude`, and `X-REAL-IP`. The operator r
 
 ## 6. Infrastructure Map
 
+### 6.1 WHOIS Summary
+
+| Domain / IP | Registrar / ISP | Organisation | Country |
+|-------------|-----------------|--------------|---------|
+| `hifixie.com` / `34.141.12.169` | Google Cloud | Google LLC | US (EU hosted) |
+| `vpn-client-premium.ru` / `176.57.65.215` | Russian registrar | Unknown | Russia |
+| `premium-vpn.store` / `176.57.67.49` | Russian registrar | Unknown | Russia |
+| `premium-web.info` / `34.132.64.158` | Google Cloud | Google LLC | US (EU hosted) |
+| `s.hifixie.com` / `193.247.82.80` | Unknown ISP | Unknown | Unknown |
+| `rapi.hifixie.com` / `85.198.100.136` | Unknown ISP | Unknown | Unknown |
+
+Abuse contacts: Russian-hosted domains route through Russian registrars with no published abuse contact. Google Cloud assets can be reported via Google's abuse reporting portal.
+
+### 6.2 Asset Map
+
 | Asset | IP | Hosting | Status |
 |-------|----|---------|--------|
 | `api.hifixie.com` | `34.141.12.169` | Google Cloud (EU) | Live |
@@ -297,6 +314,16 @@ Fields captured include `latitude`, `longitude`, and `X-REAL-IP`. The operator r
 
 **Note:** Two operator-controlled brands (`vpn-client-premium.ru` and `premium-web.info`) are served by the same backend infrastructure, suggesting a multi-brand distribution strategy.
 
+### 6.3 TLS Certificate Analysis
+
+Inspection of the TLS certificate SAN (Subject Alternative Name) on `api.hifixie.com` revealed an additional subdomain not publicly advertised:
+
+```
+DNS:api.hifixie.com, DNS:grafana.hifixie.com
+```
+
+This led to the discovery of an exposed Grafana 11.1.1 instance at `grafana.hifixie.com` (IP: `34.141.12.169`), sharing the same Google Cloud host as the primary API. Full findings documented in Finding 7.
+
 ---
 
 ## 7. Attribution Assessment
@@ -306,7 +333,7 @@ Fields captured include `latitude`, `longitude`, and `X-REAL-IP`. The operator r
 | `com.premium_vpn.mobile` is active spyware | **High** — live bot verification confirms exfiltration |
 | Developer is Рамзиль Галимов (@Ramsy_r) | **High** — confirmed across Dart binary, Telegram Bot API (3 endpoints) |
 | Exfiltration is intentional, not accidental | **High** — rate limiting, MarkdownV2 formatting, and bypass rules are deliberate design decisions |
-| Russian infrastructure used to reduce legal exposure | **Medium** — two domains on Russian hosting, Russian language throughout |
+| Operator utilises Russian-hosted infrastructure | **Medium** — two domains on Russian hosting, Russian language throughout codebase. Motivation for hosting choice not confirmed. |
 
 ---
 
@@ -335,7 +362,7 @@ Fields captured include `latitude`, `longitude`, and `X-REAL-IP`. The operator r
 |-------|--------|-------|
 | Static analysis | Dart AOT decompilation | Blutter, jadx |
 | IOC extraction | Object pool and string recovery | Blutter (`pp.txt`, `objs.txt`) |
-| Live verification | Telegram Bot API calls | Direct HTTP (hardcoded token) |
+| Live verification | Telegram Bot API calls | Direct HTTP (hardcoded token) — token recovered from publicly distributed APK via static analysis; calls were limited to read-only verification (`getMe`, `getChat`, `getChatAdministrators`) and did not interact with user data |
 | Infrastructure | Domain/IP enumeration | TLS certificate SAN, Shodan |
 | Attribution | Cross-source correlation | Dart binary + Telegram API |
 
@@ -347,9 +374,7 @@ Blutter successfully decompiled the Dart AOT snapshot (`libapp.so`, 9.8MB, Dart 
 
 **Overall Confidence: High**
 
-Attribution and exfiltration findings are corroborated across multiple independent sources: the compiled binary (build path), the Telegram Bot API (`getMe`, `getChat`, `getChatAdministrators`, `getMyShortDescription`), and the live unauthenticated settings API. The exfiltration bot was verified active at the time of analysis. Confidence is not assessed as definitive only because the rate-limited exfiltration mechanism could not be directly observed in transit.
-
----
+Attribution and exfiltration findings are corroborated across multiple independent sources: the compiled binary (build path), the Telegram Bot API (`getMe`, `getChat`, `getChatAdministrators`, `getMyShortDescription`), and the live unauthenticated settings API. The exfiltration bot was verified active at the time of analysis. The overall High confidence rating is qualified only by the inability to directly observe the rate-limited exfiltration mechanism in network transit; all other primary findings are corroborated across multiple independent sources.
 
 ---
 
@@ -359,7 +384,9 @@ Attribution and exfiltration findings are corroborated across multiple independe
 |------|--------|
 | 2026-02-22 | Analysis completed and findings documented |
 | 2026-02-22 | Reported to Google Play via the in-app report mechanism |
+| 2026-02-22 | Hardcoded Firebase API key identified — separate disclosure to Google Firebase VRP not submitted; key was reported as part of the Google Play abuse report and has since been redacted in the published version of this report |
 | 2026-03-09 | Report published — no response received from Google at time of publication |
+| 2026-03-09 | Takedown request received from Рамзиль Галимов via personal email — bot token and Firebase key redacted as courtesy; report remains public |
 
 This report is published in the public interest. The application is available on the Google Play Store and is actively exfiltrating user data. Users have a right to know.
 
