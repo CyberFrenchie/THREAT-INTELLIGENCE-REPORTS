@@ -53,6 +53,15 @@ defaults:
       author_profile: true
 
 # -------------------------------------------------------
+# Analytics
+# -------------------------------------------------------
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-M63130G1ZM"
+    anonymize_ip: false
+
+# -------------------------------------------------------
 # Site settings
 # -------------------------------------------------------
 locale: "en-GB"
