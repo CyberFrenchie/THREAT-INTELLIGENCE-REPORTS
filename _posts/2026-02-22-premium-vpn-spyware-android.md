@@ -127,8 +127,8 @@ Every device fingerprint, VPN log, and installation event collected from users w
 The compiled Dart binary contains a hardcoded Telegram Bot API token and `chat_id`, recovered directly from the object pool:
 
 ```
-[pp+0x1200] "https://api.telegram.org/bot7969799253:AAEoOLQQMBVLkNUKWRuVGaiNELwEPTQi9uk/sendDocument"
-[pp+0x48c0] "https://api.telegram.org/bot7969799253:AAEoOLQQMBVLkNUKWRuVGaiNELwEPTQi9uk/sendMessage"
+[pp+0x1200] "https://api.telegram.org/bot7969799253:AAEo[REDACTED]/sendDocument"
+[pp+0x48c0] "https://api.telegram.org/bot7969799253:AAEo[REDACTED]/sendMessage"
 [pp+0x11d0] "-5133544759"   ← destination group ID
 [pp+0x4878] "*UDID*: `"
 [pp+0x4888] "*App Version*: `"
