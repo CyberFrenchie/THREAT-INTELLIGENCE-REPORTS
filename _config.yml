@@ -1,9 +1,61 @@
 remote_theme: mmistakes/minimal-mistakes
 title: "Threat Intelligence Reports"
-description: "Research and analysis of cyber threats."
+description: "Independent OSINT-driven threat intelligence research — malware infrastructure, RAT C2 analysis, and IOC investigation."
+url: "https://cyberfrenchie.github.io"
+baseurl: "/THREAT-INTELLIGENCE-REPORTS"
+
 plugins:
   - jekyll-include-cache
   - jekyll-archives
   - jekyll-feed
+
 feed:
   path: feed.xml
+
+# -------------------------------------------------------
+# Author Profile (shows in sidebar on every page)
+# -------------------------------------------------------
+author:
+  name: "Sam Dalgleish"
+  avatar: "/THREAT-INTELLIGENCE-REPORTS/assets/images/avatar.jpg"  # upload a photo to this path, or remove this line
+  bio: "Cybersecurity researcher & final-year BSc Digital Security student. Published CVE researcher (CVE-2025-9548). Threat intelligence, vulnerability research, and OSINT. TryHackMe Master rank — top 3% globally, 112 rooms completed."
+  location: "Paisley, Scotland"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/CyberFrenchie"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/sam-dalgleish-334250306"
+    - label: "TryHackMe"
+      icon: "fas fa-fw fa-flag"
+      url: "https://tryhackme.com/p/R3TR0"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:acrilox@gmail.com"
+
+# -------------------------------------------------------
+# Defaults — apply author_profile sidebar to all pages
+# -------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      show_date: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# -------------------------------------------------------
+# Site settings
+# -------------------------------------------------------
+locale: "en-GB"
+timezone: Europe/London
+github_username: CyberFrenchie
