@@ -17,7 +17,6 @@ feed:
 # -------------------------------------------------------
 author:
   name: "Sam Dalgleish"
-  avatar: "/THREAT-INTELLIGENCE-REPORTS/assets/images/avatar.jpg"  # upload a photo to this path, or remove this line
   bio: "Cybersecurity researcher & final-year BSc Digital Security student. Published CVE researcher (CVE-2025-9548). Threat intelligence, vulnerability research, and OSINT. TryHackMe Master rank — top 3% globally, 112 rooms completed."
   location: "Paisley, Scotland"
   links:
