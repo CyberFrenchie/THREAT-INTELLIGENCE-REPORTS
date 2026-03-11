@@ -17,7 +17,6 @@ feed:
 # -------------------------------------------------------
 author:
   name: "Sam Dalgleish"
-  avatar: "/THREAT-INTELLIGENCE-REPORTS/assets/images/avatar.jpg"
   bio: "Founder, Cairn Intelligence. Cybersecurity researcher specialising in threat intelligence, OSINT, and malware analysis. Published CVE researcher (CVE-2025-9548). BSc Digital Security & Forensics, Glasgow Caledonian University. TryHackMe Master — top 3% globally."
   location: "Paisley, Scotland"
   links:
