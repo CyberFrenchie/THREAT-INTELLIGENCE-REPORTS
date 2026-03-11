@@ -30,7 +30,7 @@ author_profile: true
 
 **Premium VPN** is a Flutter-based Android VPN application distributed on the Google Play Store. This investigation — conducted through static reverse engineering of the compiled Dart AOT binary using Blutter, OSINT reconnaissance, and live Telegram Bot API verification — confirms that the application is **spyware masquerading as a privacy tool**.
 
-The app contains a hardcoded Telegram Bot API token that actively exfiltrates device logs and fingerprinting data to a private Telegram group. The sole administrator of that group has been **fully identified** as **Рамзиль Галимов (Ramzil Galimov)**, a Russian developer, confirmed across three independent sources.
+The app contains a hardcoded Telegram Bot API token that actively exfiltrates device logs and fingerprinting data to a private Telegram group. The sole administrator of that group has been **fully identified** through three independent sources and confirmed as a Russian-speaking developer. Full operator attribution details are available to verified researchers, law enforcement, and relevant authorities on request — contact sam@cairnintelligence.com.
 
 Critically, the app's own VPN tunnel **deliberately excludes the operator's traffic** from encryption, meaning the user's real IP address is always visible to the operator — directly contradicting the product's privacy claims.
 
@@ -46,22 +46,15 @@ The developer's identity was confirmed through three independent sources with no
 
 | Source | Evidence |
 |--------|----------|
-| **Dart AOT binary** (`libapp.so`) | Build filesystem path: `file:///Users/ramzilgalimov/Desktop/Work/premium_vpn_flavors/premium_vpn/` |
+| **Dart AOT binary** (`libapp.so`) | Build filesystem path containing developer identity — confirmed attribution |
 | **Telegram Bot API** (`getMe`) | Bot: `Premium VPN LOGS` — `@premium_vpn_logs_bot` — confirmed active |
-| **Telegram Bot API** (`getChatAdministrators`) | Creator: **Рамзиль Галимов** (`@Ramsy_r`, ID: `363585796`) — sole recipient of all exfiltrated data |
+| **Telegram Bot API** (`getChatAdministrators`) | Sole group creator confirmed — personally receives all exfiltrated data |
 
 ### Identified Operator
 
-| Field | Value |
-|-------|-------|
-| **Full Name** | Рамзиль Галимов (Ramzil Galimov) |
-| **Telegram Username** | @Ramsy_r |
-| **Telegram User ID** | `363585796` |
-| **Language** | Russian (`ru`) |
-| **Telegram Premium** | Yes |
-| **macOS Username** | `ramzilgalimov` |
-| **Project Path** | `~/Desktop/Work/premium_vpn_flavors/premium_vpn/` |
-| **Role** | Sole creator of exfiltration group — personally receives all stolen user data |
+Operator identity has been confirmed across all three sources above with high confidence. Full attribution details — including name, Telegram identity, and infrastructure links — are withheld from this public version for privacy and legal reasons.
+
+> **To request full attribution details:** contact sam@cairnintelligence.com — requests considered from verified researchers, law enforcement, and relevant authorities.
 
 ### Exfiltration Group
 
@@ -70,10 +63,10 @@ The developer's identity was confirmed through three independent sources with no
 | **Group Name** | `Premium VPN LOGS` |
 | **Group ID** | `-5133544759` |
 | **Type** | Private group |
-| **Members** | **2** — the exfiltration bot and Ramzil Galimov only |
+| **Members** | **2** — the exfiltration bot and identified operator only |
 | **All Members Admins** | Yes |
 
-Every device fingerprint, VPN log, and installation event collected from users worldwide is sent directly to a private 2-member Telegram group controlled solely by the developer.
+Every device fingerprint, VPN log, and installation event collected from users worldwide is sent directly to a private 2-member Telegram group controlled solely by the identified developer.
 
 ---
 
@@ -95,7 +88,7 @@ Every device fingerprint, VPN log, and installation event collected from users w
 | `@premium_vpn_logs_bot` | Telegram Bot | **Active data exfiltration bot** |
 | `7969799253` | Telegram Bot ID | Exfiltration bot ID |
 | `-5133544759` | Telegram Group ID | Private exfiltration group |
-| `363585796` | Telegram User ID | Operator (Ramzil Galimov / @Ramsy_r) |
+| `363585796` | Telegram User ID | Operator (identity withheld — available on request) |
 | `AIzaSy[REDACTED]` | Firebase API Key | Hardcoded in binary — redacted to prevent misuse |
 
 ---
@@ -331,7 +324,7 @@ This led to the discovery of an exposed Grafana 11.1.1 instance at `grafana.hifi
 | Assessment | Confidence |
 |------------|------------|
 | `com.premium_vpn.mobile` is active spyware | **High** — live bot verification confirms exfiltration |
-| Developer is Рамзиль Галимов (@Ramsy_r) | **High** — confirmed across Dart binary, Telegram Bot API (3 endpoints) |
+| Developer identity confirmed (withheld from public version) | **High** — confirmed across Dart binary, Telegram Bot API (3 endpoints) |
 | Exfiltration is intentional, not accidental | **High** — rate limiting, MarkdownV2 formatting, and bypass rules are deliberate design decisions |
 | Operator utilises Russian-hosted infrastructure | **Medium** — two domains on Russian hosting, Russian language throughout codebase. Motivation for hosting choice not confirmed. |
 
@@ -386,7 +379,7 @@ Attribution and exfiltration findings are corroborated across multiple independe
 | 2026-02-22 | Reported to Google Play via the in-app report mechanism |
 | 2026-02-22 | Hardcoded Firebase API key identified — separate disclosure to Google Firebase VRP not submitted; key was reported as part of the Google Play abuse report and has since been redacted in the published version of this report |
 | 2026-03-09 | Report published — no response received from Google at time of publication |
-| 2026-03-09 | Takedown request received from Рамзиль Галимов via personal email — bot token and Firebase key redacted as courtesy; report remains public |
+| 2026-03-09 | Takedown request received from identified operator via personal email — bot token and Firebase key redacted as courtesy; operator attribution details withheld from public version on legal advice; report remains public |
 
 This report is published in the public interest. The application is available on the Google Play Store and is actively exfiltrating user data. Users have a right to know.
 
