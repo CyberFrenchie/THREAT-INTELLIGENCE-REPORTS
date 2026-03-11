@@ -1,8 +1,8 @@
 remote_theme: mmistakes/minimal-mistakes
 title: "Cairn Intelligence — Threat Intelligence Research"
 description: "Published threat intelligence research from Cairn Intelligence — malware analysis, spyware attribution, RAT C2 investigation, and IOC reporting."
-url: "https://cyberfrenchie.github.io"
-baseurl: "/THREAT-INTELLIGENCE-REPORTS"
+url: "https://reports.cairnintelligence.com"
+baseurl: ""
 
 plugins:
   - jekyll-include-cache
