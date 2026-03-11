@@ -1,6 +1,6 @@
 remote_theme: mmistakes/minimal-mistakes
-title: "Threat Intelligence Reports"
-description: "Independent OSINT-driven threat intelligence research — malware infrastructure, RAT C2 analysis, and IOC investigation."
+title: "Cairn Intelligence — Threat Intelligence Research"
+description: "Published threat intelligence research from Cairn Intelligence — malware analysis, spyware attribution, RAT C2 investigation, and IOC reporting."
 url: "https://cyberfrenchie.github.io"
 baseurl: "/THREAT-INTELLIGENCE-REPORTS"
 
@@ -17,21 +17,22 @@ feed:
 # -------------------------------------------------------
 author:
   name: "Sam Dalgleish"
-  bio: "Cybersecurity researcher & final-year BSc Digital Security student. Published CVE researcher (CVE-2025-9548). Threat intelligence, vulnerability research, and OSINT. TryHackMe Master rank — top 3% globally, 112 rooms completed."
+  avatar: "/THREAT-INTELLIGENCE-REPORTS/assets/images/avatar.jpg"
+  bio: "Founder, Cairn Intelligence. Cybersecurity researcher specialising in threat intelligence, OSINT, and malware analysis. Published CVE researcher (CVE-2025-9548). BSc Digital Security & Forensics, Glasgow Caledonian University. TryHackMe Master — top 3% globally."
   location: "Paisley, Scotland"
   links:
+    - label: "Cairn Intelligence"
+      icon: "fas fa-fw fa-globe"
+      url: "https://cairnintelligence.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/CyberFrenchie"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/sam-dalgleish-334250306"
-    - label: "TryHackMe"
-      icon: "fas fa-fw fa-flag"
-      url: "https://tryhackme.com/p/R3TR0"
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:acrilox@gmail.com"
+      url: "mailto:sam@cairnintelligence.com"
 
 # -------------------------------------------------------
 # Defaults — apply author_profile sidebar to all pages
