@@ -1,31 +1,35 @@
 ---
 layout: home
 author_profile: true
-title: "Threat Intelligence Reports"
-excerpt: "Open-source threat intelligence research by Sam Dalgleish — investigating malware infrastructure, RAT C2 servers, and indicators of compromise."
+title: "Threat Intelligence Research"
+excerpt: "Published threat intelligence research from Cairn Intelligence — malware attribution, spyware analysis, and indicators of compromise."
 header:
   overlay_color: "#1a1a2e"
   overlay_filter: 0.6
-  tagline: "Independent OSINT-driven threat intelligence research"
+  tagline: "Threat intelligence research published by Cairn Intelligence"
 ---
 
-## About This Site
+## About
 
-This site publishes independent threat intelligence research produced by **Sam Dalgleish** ([@CyberFrenchie](https://github.com/CyberFrenchie)), a cybersecurity researcher and final-year BSc Digital Security & Forensics student at Glasgow Caledonian University.
+This site publishes open-source threat intelligence research produced by **[Cairn Intelligence](https://cairnintelligence.com)** — a cybersecurity intelligence consultancy based in Paisley, Scotland.
 
-Each report investigates malicious IP infrastructure, malware families, and indicators of compromise (IOCs) using open-source tools and publicly available threat data.
+Research is conducted by **Sam Dalgleish**, founder of Cairn Intelligence and a cybersecurity researcher specialising in malware analysis, OSINT attribution, and threat infrastructure investigation. Reports are published in the public interest under TLP classification and follow responsible disclosure practices.
+
+Cairn Intelligence provides threat intelligence services to Scottish SMEs — including monthly briefings, phishing triage, and infrastructure investigation. Visit [cairnintelligence.com](https://cairnintelligence.com) for more.
 
 ---
 
 ## Methodology
 
-Reports follow a structured intelligence workflow:
+Each report follows a structured intelligence workflow:
 
 - **IOC identification** via ThreatFox, VirusTotal, and open threat feeds
-- **Infrastructure analysis** using Shodan, WHOIS, and geolocation cross-referencing
-- **Malware behavioural analysis** via sandbox environments
-- **Defensive recommendations** for detection and containment
+- **Infrastructure analysis** using Shodan, WHOIS, and passive DNS
+- **Malware and binary analysis** via static reverse engineering and sandbox environments
+- **Attribution** through OSINT cross-referencing across multiple independent sources
+- **Responsible disclosure** prior to or concurrent with publication
 
 ---
 
 ## Reports
+
