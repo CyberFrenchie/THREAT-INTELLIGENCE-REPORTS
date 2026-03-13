@@ -385,5 +385,16 @@ This report is published in the public interest. The application is available on
 
 ---
 
+Update — Developer Response (Post-Publication)
+
+Following publication of this report, the application developer contacted the analyst via email stating that the behaviours identified in this investigation — including the Telegram bot log exfiltration mechanism and related components — have been removed from the application in a subsequent build.
+
+The developer provided an updated APK for review and requested that the application be reassessed following the claimed remediation.
+At the time of this update, the provided APK has not yet been fully analysed. A technical review is pending to determine whether the previously documented behaviours — including data exfiltration mechanisms, VPN bypass rules, and device fingerprint collection — have in fact been removed from the codebase.
+
+Until independent verification of the new build is completed, the findings documented in SDI-2026-001 remain valid for the analysed version of the application (com.premium_vpn.mobile v1.5.5 build 2026020601).
+
+Any confirmed remediation will be documented in a future report update once analysis of the developer-provided APK has been completed.
+
 *SDI-2026-001 — Sam Dalgleish (CyberFrenchie) — February 22, 2026*
 *Research conducted for educational and public interest purposes. All analysis performed on a publicly distributed application using open-source tools.*
