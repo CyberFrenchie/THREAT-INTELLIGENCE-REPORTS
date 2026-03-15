@@ -1,6 +1,6 @@
 remote_theme: mmistakes/minimal-mistakes
 title: "Cairn Intelligence — Threat Intelligence Research"
-description: "Published threat intelligence research from Cairn Intelligence — malware analysis, spyware attribution, RAT C2 investigation, and IOC reporting."
+description: "Published threat intelligence research from Cairn Intelligence — OSINT-led investigations, spyware analysis, infrastructure research, and IOC reporting for Scottish and UK businesses."
 url: "https://reports.cairnintelligence.com"
 baseurl: ""
 
@@ -8,6 +8,9 @@ plugins:
   - jekyll-include-cache
   - jekyll-archives
   - jekyll-feed
+  - jekyll-seo-tag
+
+og_image: "/assets/images/cairn-og.png"
 
 feed:
   path: feed.xml
@@ -17,7 +20,7 @@ feed:
 # -------------------------------------------------------
 author:
   name: "Sam Dalgleish"
-  bio: "Founder, Cairn Intelligence. Cybersecurity researcher specialising in threat intelligence, OSINT, and malware analysis. Published CVE researcher (CVE-2025-9548). BSc Digital Security & Forensics, Glasgow Caledonian University. TryHackMe Master — top 3% globally."
+  bio: "Founder, Cairn Intelligence. Cybersecurity researcher specialising in threat intelligence and OSINT investigation. Published CVE researcher (CVE-2025-9548). BSc Digital Security & Forensics, Glasgow Caledonian University."
   location: "Paisley, Scotland"
   links:
     - label: "Cairn Intelligence"
@@ -67,3 +70,8 @@ analytics:
 locale: "en-GB"
 timezone: Europe/London
 github_username: CyberFrenchie
+twitter:
+  username: "cairnintel"
+logo: "/assets/images/cairn-og.png"
+search: true
+search_full_content: true
