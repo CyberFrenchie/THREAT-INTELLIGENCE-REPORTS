@@ -377,24 +377,46 @@ Attribution and exfiltration findings are corroborated across multiple independe
 |------|--------|
 | 2026-02-22 | Analysis completed and findings documented |
 | 2026-02-22 | Reported to Google Play via the in-app report mechanism |
-| 2026-02-22 | Hardcoded Firebase API key identified — separate disclosure to Google Firebase VRP not submitted; key was reported as part of the Google Play abuse report and has since been redacted in the published version of this report |
+| 2026-02-22 | Hardcoded Firebase API key identified — reported as part of the Google Play abuse report; redacted in published version |
 | 2026-03-09 | Report published — no response received from Google at time of publication |
 | 2026-03-09 | Takedown request received from identified operator via personal email — bot token and Firebase key redacted as courtesy; operator attribution details withheld from public version on legal advice; report remains public |
+| 2026-03-12 | Developer released v1.5.7 and provided written responses to all findings |
+| 2026-03-16 | Cairn Intelligence completed review of v1.5.7 and developer responses — findings update below |
 
 This report is published in the public interest. The application is available on the Google Play Store and is actively exfiltrating user data. Users have a right to know.
 
 ---
 
-Update — Developer Response (Post-Publication)
+## Update — Developer Response and v1.5.7 Review (16 March 2026)
 
-Following publication of this report, the application developer contacted the analyst via email stating that the behaviours identified in this investigation — including the Telegram bot log exfiltration mechanism and related components — have been removed from the application in a subsequent build.
+Following publication of this report, the application developer engaged with Cairn Intelligence professionally and in good faith. Version 1.5.7 was released on 12 March 2026, with the developer providing written responses to all findings. Cairn Intelligence has reviewed the developer's responses and the updated build. The following reflects the current status of each finding.
 
-The developer provided an updated APK for review and requested that the application be reassessed following the claimed remediation.
-At the time of this update, the provided APK has not yet been fully analysed. A technical review is pending to determine whether the previously documented behaviours — including data exfiltration mechanisms, VPN bypass rules, and device fingerprint collection — have in fact been removed from the codebase.
+**Findings resolved in v1.5.7:**
 
-Until independent verification of the new build is completed, the findings documented in SDI-2026-001 remain valid for the analysed version of the application (com.premium_vpn.mobile v1.5.5 build 2026020601).
+| Finding | Status |
+|---------|--------|
+| Finding 1 — Telegram bot exfiltration | **Resolved** — hardcoded bot token and exfiltration service removed |
+| Finding 4 — App install monitoring | **Resolved** — `PACKAGE_ADDED` broadcast receiver removed |
+| Finding 5 — UDID Telegram exfiltration | **Resolved** — device identifier exfiltration removed |
+| Finding 7 — Grafana CVE exposure | **Improved** — developer reports Grafana has been updated |
+| Finding 8 — Real IP harvesting | **Improved** — developer reports changes made to IP collection |
 
-Any confirmed remediation will be documented in a future report update once analysis of the developer-provided APK has been completed.
+**Findings not resolved:**
+
+| Finding | Status |
+|---------|--------|
+| Finding 2 — VPN bypass rules | **Stands** — split tunnelling behaviour remains undisclosed to users. The developer defended this as necessary for app functionality. Cairn Intelligence accepts that split tunnelling is a legitimate feature but maintains that users must be clearly informed in the privacy policy or app description which traffic bypasses the VPN tunnel. This finding stands until disclosure is added. |
+| Finding 3 — Java deserialization (RCE) | **Not addressed** — no response provided |
+| Finding 6 — Unauthenticated API | **Not addressed** — no response provided |
+| Findings 9–10 — Firebase / Sentry keys | **Accepted** — developer's defence accepted. These are operational keys for the developer's own infrastructure, not user data exposure. Downgraded to informational. |
+
+**Overall assessment update:**
+
+The developer engaged responsibly, communicated clearly, and resolved the most critical exfiltration findings within a reasonable timeframe. This reflects positively on the developer's intent to remediate. The most critical user-facing harms — active data exfiltration to a private Telegram group — have been addressed in v1.5.7.
+
+Finding 2 (VPN bypass without user disclosure) remains the outstanding concern. Users of v1.5.7 should be aware that the app's operator domains continue to bypass the VPN tunnel, and this is not disclosed in the privacy policy or app store listing at the time of this update.
+
+Users of v1.5.5 or earlier should still uninstall immediately. Users of v1.5.7 should review the privacy policy before continued use.
 
 *SDI-2026-001 — Sam Dalgleish (CyberFrenchie) — February 22, 2026*
 *Research conducted for educational and public interest purposes. All analysis performed on a publicly distributed application using open-source tools.*
