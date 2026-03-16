@@ -1,6 +1,6 @@
 remote_theme: mmistakes/minimal-mistakes
 title: "Cairn Intelligence — Threat Intelligence Research"
-description: "Published threat intelligence research from Cairn Intelligence — OSINT-led investigations, spyware analysis, infrastructure research, and IOC reporting for Scottish and UK businesses."
+description: "Published threat intelligence research from Cairn Intelligence — OSINT-led investigations, infrastructure research, and IOC reporting for businesses worldwide."
 url: "https://reports.cairnintelligence.com"
 baseurl: ""
 
@@ -21,8 +21,9 @@ feed:
 # -------------------------------------------------------
 author:
   name: "Sam Dalgleish"
+
   bio: "Founder, Cairn Intelligence. Cybersecurity researcher specialising in threat intelligence and OSINT investigation. Published CVE researcher (CVE-2025-9548). BSc Digital Security & Forensics, Glasgow Caledonian University."
-  location: "Paisley, Scotland"
+  location: "Scotland"
   links:
     - label: "Cairn Intelligence"
       icon: "fas fa-fw fa-globe"
