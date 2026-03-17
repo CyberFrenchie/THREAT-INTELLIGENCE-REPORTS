@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Threat Intelligence Report: Premium VPN Android — Confirmed Spyware with Active Data Exfiltration"
+title: "Threat Intelligence Report: Premium VPN Android — Serious Privacy Vulnerabilities [RESOLVED in v1.5.7]"
 date: 2026-02-22
 categories: [threat-intelligence]
 tags: [Spyware, Android, Flutter, VPN, DataExfiltration, Attribution, Telegram, ReverseEngineering]
@@ -74,18 +74,18 @@ Every device fingerprint, VPN log, and installation event collected from users w
 
 | Indicator | Type | Description |
 |-----------|------|-------------|
-| `com.premium_vpn.mobile` | App Package | Malicious Android application |
-| `34.141.12.169` | IP Address | Primary API / Grafana — Google Cloud |
-| `193.247.82.80` | IP Address | Self-hosted Sentry (`s.hifixie.com`) |
-| `85.198.100.136` | IP Address | Reserve API (`rapi.hifixie.com`) |
-| `176.57.65.215` | IP Address | Russian-hosted website (`vpn-client-premium.ru`) |
-| `176.57.67.49` | IP Address | Russian-hosted key store (`premium-vpn.store`) |
-| `34.132.64.158` | IP Address | Secondary website (`premium-web.info`) |
-| `hifixie.com` | Domain | Operator API domain |
-| `vpn-client-premium.ru` | Domain | Russian-hosted operator website |
-| `premium-web.info` | Domain | Secondary operator brand |
-| `premium-vpn.store` | Domain | VPN key store |
-| `@premium_vpn_logs_bot` | Telegram Bot | **Active data exfiltration bot** |
+| `com.premium_vpn.mobile` | App Package | Android application under investigation |
+| `[IP REDACTED]` | IP Address | Primary API / Grafana — Google Cloud |
+| `[IP REDACTED]` | IP Address | Self-hosted Sentry instance |
+| `[IP REDACTED]` | IP Address | Reserve API endpoint |
+| `[IP REDACTED]` | IP Address | Russian-hosted website |
+| `[IP REDACTED]` | IP Address | Russian-hosted key store |
+| `[IP REDACTED]` | IP Address | Secondary website |
+| `[domain redacted]` | Domain | Operator API domain |
+| `[domain redacted]` | Domain | Russian-hosted operator website |
+| `[domain redacted]` | Domain | Secondary operator brand |
+| `[domain redacted]` | Domain | VPN key store |
+| `@premium_vpn_logs_bot` | Telegram Bot | Data exfiltration bot (resolved in v1.5.7) |
 | `7969799253` | Telegram Bot ID | Exfiltration bot ID |
 | `-5133544759` | Telegram Group ID | Private exfiltration group |
 | `363585796` | Telegram User ID | Operator (identity withheld — available on request) |
@@ -162,12 +162,12 @@ The sing-box VPN configuration — returned by the unauthenticated `/api/v1/app/
 
 ```json
 "rules": [
-  {"domains": "domain:hifixie.com", "outbound": "bypass"},
+  {"domains": "domain:[redacted]", "outbound": "bypass"},
   {"domains": "domain:app-measurement.com", "outbound": "bypass"}
 ]
 ```
 
-All traffic to `hifixie.com` (the operator's API) and `app-measurement.com` (Google Analytics) **travels outside the VPN tunnel on the user's real IP**. This means:
+All traffic to the operator's API domain and `app-measurement.com` (Google Analytics) **travels outside the VPN tunnel on the user's real IP**. This means:
 
 - All auth tokens, UDID headers, and device data sent to the operator's API are unencrypted to the user's ISP
 - Google Analytics tracking bypasses the tunnel
@@ -239,15 +239,12 @@ r2 = "unique-device-id"  ; Header injected into every request
 
 **Severity:** HIGH
 
-Discovered via TLS certificate SAN on `api.hifixie.com`:
-```
-DNS:api.hifixie.com, DNS:grafana.hifixie.com
-```
+Discovered via TLS certificate SAN on the primary API domain. Domain and IP details redacted at developer request.
 
 | Detail | Value |
 |--------|-------|
-| URL | `grafana.hifixie.com` |
-| IP | `34.141.12.169` (Google Cloud) |
+| URL | `[domain redacted]` |
+| IP | `[IP REDACTED]` (Google Cloud) |
 | Version | **Grafana 11.1.1** |
 
 | CVE | CVSS | Type |
@@ -283,39 +280,31 @@ Fields captured include `latitude`, `longitude`, and `X-REAL-IP`. The operator r
 
 | Domain / IP | Registrar / ISP | Organisation | Country |
 |-------------|-----------------|--------------|---------|
-| `hifixie.com` / `34.141.12.169` | Google Cloud | Google LLC | US (EU hosted) |
-| `vpn-client-premium.ru` / `176.57.65.215` | Russian registrar | Unknown | Russia |
-| `premium-vpn.store` / `176.57.67.49` | Russian registrar | Unknown | Russia |
-| `premium-web.info` / `34.132.64.158` | Google Cloud | Google LLC | US (EU hosted) |
-| `s.hifixie.com` / `193.247.82.80` | Unknown ISP | Unknown | Unknown |
-| `rapi.hifixie.com` / `85.198.100.136` | Unknown ISP | Unknown | Unknown |
+| `[domain redacted]` / `[IP REDACTED]` | Google Cloud | Google LLC | US (EU hosted) |
+| `[domain redacted]` / `[IP REDACTED]` | Russian registrar | Unknown | Russia |
+| `[domain redacted]` / `[IP REDACTED]` | Russian registrar | Unknown | Russia |
+| `[domain redacted]` / `[IP REDACTED]` | Google Cloud | Google LLC | US (EU hosted) |
+| `[domain redacted]` / `[IP REDACTED]` | Unknown ISP | Unknown | Unknown |
+| `[domain redacted]` / `[IP REDACTED]` | Unknown ISP | Unknown | Unknown |
 
-Abuse contacts: Russian-hosted domains route through Russian registrars with no published abuse contact. Google Cloud assets can be reported via Google's abuse reporting portal.
+Infrastructure details redacted at developer request following resolution of findings. Full details available to verified researchers and law enforcement on request — contact sam@cairnintelligence.com.
 
 ### 6.2 Asset Map
 
 | Asset | IP | Hosting | Status |
 |-------|----|---------|--------|
-| `api.hifixie.com` | `34.141.12.169` | Google Cloud (EU) | Live |
-| `grafana.hifixie.com` | `34.141.12.169` | Google Cloud (EU) | Exposed — login required |
-| `s.hifixie.com` | `193.247.82.80` | Unknown | Self-hosted Sentry |
-| `rapi.hifixie.com` | `85.198.100.136` | Unknown | Reserve API — Live |
-| `vpn-client-premium.ru` | `176.57.65.215` | **Russian hosting** | Live |
-| `premium-vpn.store` | `176.57.67.49` | **Russian hosting** | Live |
-| `premium-web.info` | `34.132.64.158` | Google Cloud | Live |
-| `@premium_vpn_logs_bot` | — | Telegram | **Active exfiltration** |
-
-**Note:** Two operator-controlled brands (`vpn-client-premium.ru` and `premium-web.info`) are served by the same backend infrastructure, suggesting a multi-brand distribution strategy.
+| Primary API | `[IP REDACTED]` | Google Cloud (EU) | Live |
+| Grafana instance | `[IP REDACTED]` | Google Cloud (EU) | Redacted |
+| Self-hosted Sentry | `[IP REDACTED]` | Unknown | Redacted |
+| Reserve API | `[IP REDACTED]` | Unknown | Redacted |
+| Russian-hosted website | `[IP REDACTED]` | Russian hosting | Redacted |
+| Russian-hosted key store | `[IP REDACTED]` | Russian hosting | Redacted |
+| Secondary website | `[IP REDACTED]` | Google Cloud | Redacted |
+| `@premium_vpn_logs_bot` | — | Telegram | Resolved in v1.5.7 |
 
 ### 6.3 TLS Certificate Analysis
 
-Inspection of the TLS certificate SAN (Subject Alternative Name) on `api.hifixie.com` revealed an additional subdomain not publicly advertised:
-
-```
-DNS:api.hifixie.com, DNS:grafana.hifixie.com
-```
-
-This led to the discovery of an exposed Grafana 11.1.1 instance at `grafana.hifixie.com` (IP: `34.141.12.169`), sharing the same Google Cloud host as the primary API. Full findings documented in Finding 7.
+Inspection of the TLS certificate SAN (Subject Alternative Name) on the primary API domain revealed an additional subdomain not publicly advertised, leading to the discovery of an exposed Grafana 11.1.1 instance sharing the same Google Cloud host. Full findings documented in Finding 7. Domain details redacted at developer request.
 
 ---
 
