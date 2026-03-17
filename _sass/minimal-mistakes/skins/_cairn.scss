@@ -1,0 +1,48 @@
+/* Cairn Intelligence skin — matches cairnintelligence.com */
+
+$background-color: #0B1F3A !default;
+$text-color: #F8F9FB !default;
+$muted-text-color: #94A3B8 !default;
+$primary-color: #D4A832 !default;
+$border-color: mix(#fff, #0B1F3A, 20%) !default;
+$footer-background-color: #060F1E !default;
+$link-color: #D4A832 !default;
+$masthead-link-color: #F8F9FB !default;
+$masthead-link-color-hover: #D4A832 !default;
+$navicon-link-color-hover: mix(#fff, #0B1F3A, 80%) !default;
+
+.author__urls-wrapper .btn {
+  color: #D4A832;
+  border-color: #D4A832;
+}
+
+.greedy-nav {
+  background: #0B1F3A;
+}
+
+.greedy-nav a {
+  color: #F8F9FB;
+}
+
+.greedy-nav a:hover {
+  color: #D4A832;
+}
+
+.page__footer {
+  background-color: #060F1E;
+  color: #64748B;
+}
+
+.toc .nav__title {
+  background: #D4A832;
+  color: #0B1F3A;
+}
+
+a {
+  color: #D4A832;
+}
+
+.btn--primary {
+  background-color: #D4A832;
+  color: #0B1F3A;
+}
