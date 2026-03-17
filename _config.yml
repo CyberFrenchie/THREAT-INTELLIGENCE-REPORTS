@@ -1,5 +1,6 @@
 remote_theme: mmistakes/minimal-mistakes
-title: "Cairn Intelligence — Threat Intelligence Research"
+minimal_mistakes_skin: "cairn"
+title: "Cairn Intelligence"
 description: "Published threat intelligence research from Cairn Intelligence — OSINT-led investigations, infrastructure research, and IOC reporting for businesses worldwide."
 url: "https://reports.cairnintelligence.com"
 baseurl: ""
@@ -11,7 +12,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-og_image: "/assets/images/cairn-og.png"
 
 feed:
   path: feed.xml
@@ -74,6 +74,5 @@ timezone: Europe/London
 github_username: CyberFrenchie
 twitter:
   username: "cairnintel"
-logo: "/assets/images/cairn-og.png"
 search: true
 search_full_content: true
