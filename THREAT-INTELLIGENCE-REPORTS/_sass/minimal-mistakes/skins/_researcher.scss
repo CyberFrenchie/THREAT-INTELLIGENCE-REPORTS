@@ -1,0 +1,84 @@
+/* Personal research portfolio skin */
+
+$background-color: #f6f4ef !default;
+$text-color: #18212a !default;
+$muted-text-color: #5f6b76 !default;
+$primary-color: #0f766e !default;
+$border-color: #d9d3c7 !default;
+$footer-background-color: #17202a !default;
+$link-color: #0f766e !default;
+$masthead-link-color: #18212a !default;
+$masthead-link-color-hover: #0f766e !default;
+$navicon-link-color-hover: #0f766e !default;
+
+body {
+  background: #f6f4ef;
+}
+
+.masthead {
+  border-bottom: 1px solid #d9d3c7;
+}
+
+.greedy-nav {
+  background: #f6f4ef;
+}
+
+.greedy-nav a {
+  color: #18212a;
+}
+
+.greedy-nav a:hover {
+  color: #0f766e;
+}
+
+.page__title,
+.archive__item-title {
+  color: #18212a;
+}
+
+a {
+  color: #0f766e;
+}
+
+a:hover {
+  color: #7a4d12;
+}
+
+.author__urls-wrapper .btn,
+.btn--primary {
+  background-color: #0f766e;
+  border-color: #0f766e;
+  color: #ffffff;
+}
+
+.author__urls-wrapper .btn:hover,
+.btn--primary:hover {
+  background-color: #0b5e58;
+  border-color: #0b5e58;
+}
+
+.notice,
+.notice--info {
+  background-color: #ece7dc;
+  border-left-color: #0f766e;
+}
+
+.toc .nav__title {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.page__footer {
+  background-color: #17202a;
+  color: #cbd5df;
+}
+
+.page__footer a {
+  color: #8cc7bd;
+}
+
+code,
+kbd,
+pre {
+  background-color: #ede8de;
+}

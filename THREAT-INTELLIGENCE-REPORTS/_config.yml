@@ -1,0 +1,61 @@
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "researcher"
+title: "Sam Dalgleish"
+description: "Personal threat intelligence research by Sam Dalgleish — OSINT-led investigations, vulnerability research, infrastructure analysis, and IOC reporting."
+url: "https://cyberfrenchie.github.io"
+baseurl: "/THREAT-INTELLIGENCE-REPORTS"
+
+plugins:
+  - jekyll-include-cache
+  - jekyll-archives
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+
+feed:
+  path: feed.xml
+
+# -------------------------------------------------------
+# Author Profile (shows in sidebar on every page)
+# -------------------------------------------------------
+author:
+  name: "Sam Dalgleish"
+
+  bio: "Cybersecurity researcher and threat intelligence analyst. Published CVE researcher (CVE-2025-9548), final-year BSc Digital Security & Forensics student, with practical work across OSINT, fuzzing, malware analysis, SIEM, and responsible disclosure."
+  location: "Paisley, Scotland"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/CyberFrenchie"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/sam-dalgleish-334250306"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:acrilox@gmail.com"
+
+# -------------------------------------------------------
+# Defaults — apply author_profile sidebar to all pages
+# -------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      show_date: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+locale: "en-GB"
+timezone: Europe/London
+github_username: CyberFrenchie
+search: true
+search_full_content: true
