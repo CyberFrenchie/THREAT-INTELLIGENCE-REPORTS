@@ -50,6 +50,6 @@ Sam is a final-year BSc (Hons) Digital Security & Forensics student at Glasgow C
 
 ## Contact
 
-- **Email:** [acrilox@gmail.com](mailto:acrilox@gmail.com)
+- **LinkedIn:** [sam-dalgleish](https://linkedin.com/in/sam-dalgleish-334250306)
 - **GitHub:** [@CyberFrenchie](https://github.com/CyberFrenchie)
 - **LinkedIn:** [Sam Dalgleish](https://linkedin.com/in/sam-dalgleish-334250306)

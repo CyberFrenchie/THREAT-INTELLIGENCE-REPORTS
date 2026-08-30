@@ -30,9 +30,6 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/sam-dalgleish-334250306"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:acrilox@gmail.com"
 
 # -------------------------------------------------------
 # Defaults — apply author_profile sidebar to all pages

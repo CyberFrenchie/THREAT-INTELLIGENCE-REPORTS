@@ -30,7 +30,7 @@ author_profile: true
 
 **Premium VPN** is a Flutter-based Android VPN application distributed on the Google Play Store. This investigation — conducted through static reverse engineering of the compiled Dart AOT binary using Blutter, OSINT reconnaissance, and live Telegram Bot API verification — confirms that the application is **spyware masquerading as a privacy tool**.
 
-The app contains a hardcoded Telegram Bot API token that actively exfiltrates device logs and fingerprinting data to a private Telegram group. The sole administrator of that group has been **fully identified** through three independent sources and confirmed as a Russian-speaking developer. Full operator attribution details are available to verified researchers, law enforcement, and relevant authorities on request — contact acrilox@gmail.com.
+The app contains a hardcoded Telegram Bot API token that actively exfiltrates device logs and fingerprinting data to a private Telegram group. The sole administrator of that group has been **fully identified** through three independent sources and confirmed as a Russian-speaking developer. Full operator attribution details are available to verified researchers, law enforcement, and relevant authorities on request — contact me via [LinkedIn](https://linkedin.com/in/sam-dalgleish-334250306).
 
 Critically, the app's own VPN tunnel **deliberately excludes the operator's traffic** from encryption, meaning the user's real IP address is always visible to the operator — directly contradicting the product's privacy claims.
 
@@ -54,7 +54,7 @@ The developer's identity was confirmed through three independent sources with no
 
 Operator identity has been confirmed across all three sources above with high confidence. Full attribution details — including name, Telegram identity, and infrastructure links — are withheld from this public version for privacy and legal reasons.
 
-> **To request full attribution details:** contact acrilox@gmail.com — requests considered from verified researchers, law enforcement, and relevant authorities.
+> **To request full attribution details:** contact me via [LinkedIn](https://linkedin.com/in/sam-dalgleish-334250306) — requests considered from verified researchers, law enforcement, and relevant authorities.
 
 ### Exfiltration Group
 
@@ -287,7 +287,7 @@ Fields captured include `latitude`, `longitude`, and `X-REAL-IP`. The operator r
 | `[domain redacted]` / `[IP REDACTED]` | Unknown ISP | Unknown | Unknown |
 | `[domain redacted]` / `[IP REDACTED]` | Unknown ISP | Unknown | Unknown |
 
-Infrastructure details redacted at developer request following resolution of findings. Full details available to verified researchers and law enforcement on request — contact acrilox@gmail.com.
+Infrastructure details redacted at developer request following resolution of findings. Full details available to verified researchers and law enforcement on request — contact me via [LinkedIn](https://linkedin.com/in/sam-dalgleish-334250306).
 
 ### 6.2 Asset Map
 

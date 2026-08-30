@@ -13,9 +13,10 @@ For research enquiries, report feedback, attribution requests, or responsible di
 
 ### Sam Dalgleish
 
-**Email:** [acrilox@gmail.com](mailto:acrilox@gmail.com)
+**LinkedIn:** [sam-dalgleish](https://linkedin.com/in/sam-dalgleish-334250306)  
+**GitHub:** [@CyberFrenchie](https://github.com/CyberFrenchie)
 
-For full operator attribution details on any redacted report, contact the above email with your name, organisation, and the report ID. Requests are considered from verified researchers, law enforcement, and relevant authorities.
+For full operator attribution details on any redacted report, message me on LinkedIn with your name, organisation, and the report ID. Requests are considered from verified researchers, law enforcement, and relevant authorities.
 
 ---
 

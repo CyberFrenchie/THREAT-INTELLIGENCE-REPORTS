@@ -76,7 +76,7 @@ AiLock is a ransomware-as-a-service (RaaS) or single-operator ransomware group f
 | `AILock.yar` | YARA Rule | Available via ransomware.live — not reproduced here | Medium |
 | MD5 / SHA256 hashes | File Hashes | Available via ransomware.live — not verified independently | Low |
 
-> **Note:** Specific file hashes have not been independently verified by Sam Dalgleish at time of publication. Treat hash IOCs from third-party sources with medium confidence until corroborated against a confirmed sample.
+> **Note:** I have not independently verified the specific file hashes at time of publication. Treat hash IOCs from third-party sources with medium confidence until corroborated against a confirmed sample.
 
 ---
 
@@ -185,4 +185,4 @@ The 129GB data volume figure is based solely on the threat actor's own claim and
 
 ---
 
-*Sam Dalgleish (CyberFrenchie) — Paisley, Scotland — acrilox@gmail.com*
+*Sam Dalgleish (CyberFrenchie) — Paisley, Scotland — [LinkedIn](https://linkedin.com/in/sam-dalgleish-334250306)*
