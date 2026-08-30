@@ -1,6 +1,6 @@
 # Sam Dalgleish — Threat Intelligence Research
 
-Published threat intelligence research by **Sam Dalgleish** ([@CyberFrenchie](https://github.com/CyberFrenchie)), a cybersecurity researcher and threat intelligence analyst based in Paisley, Scotland.
+Published threat intelligence research by **Sam Dalgleish** ([@CyberFrenchie](https://github.com/CyberFrenchie)), a cybersecurity researcher and threat intelligence analyst based in Scotland.
 
 Each report investigates malicious infrastructure, malware families, spyware attribution, and indicators of compromise (IOCs) using open-source tools and publicly available data.
 
@@ -44,7 +44,7 @@ Each report follows a structured intelligence workflow:
 
 ## About Sam Dalgleish
 
-Sam is a final-year BSc (Hons) Digital Security & Forensics student at Glasgow Caledonian University with practical experience in OSINT, vulnerability research, fuzzing, malware analysis, SIEM, and responsible disclosure. His published work includes CVE-2025-9548 and public investigations into spyware, RAT infrastructure, and live attack telemetry.
+Sam holds a BSc (Hons) in Digital Security & Forensics from Glasgow Caledonian University and works as a SOC engineer at Acumen Cyber, with practical experience in OSINT, vulnerability research, fuzzing, malware analysis, SIEM, and responsible disclosure. The research published here is independent work carried out in his own time. His published work includes CVE-2025-9548 and public investigations into spyware, RAT infrastructure, and live attack telemetry.
 
 ---
 

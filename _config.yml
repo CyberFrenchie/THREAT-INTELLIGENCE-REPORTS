@@ -21,8 +21,8 @@ feed:
 author:
   name: "Sam Dalgleish"
 
-  bio: "Cybersecurity researcher and threat intelligence analyst. Published CVE researcher (CVE-2025-9548), final-year BSc Digital Security & Forensics student, with practical work across OSINT, fuzzing, malware analysis, SIEM, and responsible disclosure."
-  location: "Paisley, Scotland"
+  bio: "Cybersecurity researcher and SOC engineer. Published CVE researcher (CVE-2025-9548), BSc Digital Security &amp; Forensics. Independent research across OSINT, fuzzing, malware analysis, SIEM, and responsible disclosure."
+  location: "Scotland"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

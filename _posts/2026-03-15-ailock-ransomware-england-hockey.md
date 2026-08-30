@@ -185,4 +185,4 @@ The 129GB data volume figure is based solely on the threat actor's own claim and
 
 ---
 
-*Sam Dalgleish (CyberFrenchie) — Paisley, Scotland — [LinkedIn](https://linkedin.com/in/sam-dalgleish-334250306)*
+*Sam Dalgleish (CyberFrenchie) — Scotland — [LinkedIn](https://linkedin.com/in/sam-dalgleish-334250306)*
