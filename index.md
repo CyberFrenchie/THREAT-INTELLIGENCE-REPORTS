@@ -2,18 +2,17 @@
 layout: home
 author_profile: true
 title: "Threat Intelligence Research"
-excerpt: "Published threat intelligence research from Cairn Intelligence — OSINT investigations, infrastructure research, and indicators of compromise."
+excerpt: "Personal threat intelligence research by Sam Dalgleish — OSINT investigations, vulnerability research, infrastructure analysis, and indicators of compromise."
 ---
 
 ## About
 
-This site publishes open-source threat intelligence research produced by **[Cairn Intelligence](https://cairnintelligence.com)** — an independent cybersecurity intelligence practice based in Scotland, serving businesses worldwide.
+This site publishes open-source threat intelligence research by **Sam Dalgleish** (CyberFrenchie), a cybersecurity researcher and threat intelligence analyst based in Paisley, Scotland.
 
-Research is conducted by **Sam Dalgleish**, founder of Cairn Intelligence and a cybersecurity researcher specialising in threat intelligence, OSINT investigation, and threat infrastructure analysis. Reports are published in the public interest under TLP classification and follow responsible disclosure practices.
+My work focuses on OSINT-led investigation, vulnerability research, malware and infrastructure analysis, IOC validation, and responsible disclosure. I am a published CVE researcher (CVE-2025-9548) and a final-year BSc Digital Security & Forensics student at Glasgow Caledonian University.
 
-Cairn Intelligence provides threat intelligence services to SMEs worldwide — including monthly briefings, phishing triage, and infrastructure investigation. Visit [cairnintelligence.com](https://cairnintelligence.com) for more.
+Reports are published in the public interest under TLP classification where appropriate and aim to provide clear, reproducible findings for defenders, researchers, and relevant authorities.
 
 ---
 
 ## Reports
-

@@ -1,6 +1,6 @@
-# Cairn Intelligence — Threat Intelligence Research
+# Sam Dalgleish — Threat Intelligence Research
 
-Published threat intelligence research from **[Cairn Intelligence](https://cairnintelligence.com)** — a cybersecurity intelligence consultancy based in Paisley, Scotland. Research is conducted by Sam Dalgleish ([@CyberFrenchie](https://github.com/CyberFrenchie)), founder of Cairn Intelligence.
+Published threat intelligence research by **Sam Dalgleish** ([@CyberFrenchie](https://github.com/CyberFrenchie)), a cybersecurity researcher and threat intelligence analyst based in Paisley, Scotland.
 
 Each report investigates malicious infrastructure, malware families, spyware attribution, and indicators of compromise (IOCs) using open-source tools and publicly available data.
 
@@ -42,17 +42,14 @@ Each report follows a structured intelligence workflow:
 
 ---
 
-## About Cairn Intelligence
+## About Sam Dalgleish
 
-Cairn Intelligence provides threat intelligence services to Scottish SMEs — including monthly briefings (Cairn Watch), phishing triage, and infrastructure investigation. This research portfolio demonstrates the analytical capability behind those services.
-
-Visit [cairnintelligence.com](https://cairnintelligence.com) to learn more.
+Sam is a final-year BSc (Hons) Digital Security & Forensics student at Glasgow Caledonian University with practical experience in OSINT, vulnerability research, fuzzing, malware analysis, SIEM, and responsible disclosure. His published work includes CVE-2025-9548 and public investigations into spyware, RAT infrastructure, and live attack telemetry.
 
 ---
 
 ## Contact
 
-- **Website:** [cairnintelligence.com](https://cairnintelligence.com)
-- **Email:** [sam@cairnintelligence.com](mailto:sam@cairnintelligence.com)
+- **Email:** [acrilox@gmail.com](mailto:acrilox@gmail.com)
 - **GitHub:** [@CyberFrenchie](https://github.com/CyberFrenchie)
 - **LinkedIn:** [Sam Dalgleish](https://linkedin.com/in/sam-dalgleish-334250306)

@@ -30,7 +30,7 @@ author_profile: true
 
 **Premium VPN** is a Flutter-based Android VPN application distributed on the Google Play Store. This investigation — conducted through static reverse engineering of the compiled Dart AOT binary using Blutter, OSINT reconnaissance, and live Telegram Bot API verification — confirms that the application is **spyware masquerading as a privacy tool**.
 
-The app contains a hardcoded Telegram Bot API token that actively exfiltrates device logs and fingerprinting data to a private Telegram group. The sole administrator of that group has been **fully identified** through three independent sources and confirmed as a Russian-speaking developer. Full operator attribution details are available to verified researchers, law enforcement, and relevant authorities on request — contact sam@cairnintelligence.com.
+The app contains a hardcoded Telegram Bot API token that actively exfiltrates device logs and fingerprinting data to a private Telegram group. The sole administrator of that group has been **fully identified** through three independent sources and confirmed as a Russian-speaking developer. Full operator attribution details are available to verified researchers, law enforcement, and relevant authorities on request — contact acrilox@gmail.com.
 
 Critically, the app's own VPN tunnel **deliberately excludes the operator's traffic** from encryption, meaning the user's real IP address is always visible to the operator — directly contradicting the product's privacy claims.
 
@@ -54,7 +54,7 @@ The developer's identity was confirmed through three independent sources with no
 
 Operator identity has been confirmed across all three sources above with high confidence. Full attribution details — including name, Telegram identity, and infrastructure links — are withheld from this public version for privacy and legal reasons.
 
-> **To request full attribution details:** contact sam@cairnintelligence.com — requests considered from verified researchers, law enforcement, and relevant authorities.
+> **To request full attribution details:** contact acrilox@gmail.com — requests considered from verified researchers, law enforcement, and relevant authorities.
 
 ### Exfiltration Group
 
@@ -287,7 +287,7 @@ Fields captured include `latitude`, `longitude`, and `X-REAL-IP`. The operator r
 | `[domain redacted]` / `[IP REDACTED]` | Unknown ISP | Unknown | Unknown |
 | `[domain redacted]` / `[IP REDACTED]` | Unknown ISP | Unknown | Unknown |
 
-Infrastructure details redacted at developer request following resolution of findings. Full details available to verified researchers and law enforcement on request — contact sam@cairnintelligence.com.
+Infrastructure details redacted at developer request following resolution of findings. Full details available to verified researchers and law enforcement on request — contact acrilox@gmail.com.
 
 ### 6.2 Asset Map
 
@@ -370,7 +370,7 @@ Attribution and exfiltration findings are corroborated across multiple independe
 | 2026-03-09 | Report published — no response received from Google at time of publication |
 | 2026-03-09 | Takedown request received from identified operator via personal email — bot token and Firebase key redacted as courtesy; operator attribution details withheld from public version on legal advice; report remains public |
 | 2026-03-12 | Developer released v1.5.7 and provided written responses to all findings |
-| 2026-03-16 | Cairn Intelligence completed review of v1.5.7 and developer responses — findings update below |
+| 2026-03-16 | Sam Dalgleish completed review of v1.5.7 and developer responses — findings update below |
 
 This report is published in the public interest. The application is available on the Google Play Store and is actively exfiltrating user data. Users have a right to know.
 
@@ -378,7 +378,7 @@ This report is published in the public interest. The application is available on
 
 ## Update — Developer Response and v1.5.7 Review (16 March 2026)
 
-Following publication of this report, the application developer engaged with Cairn Intelligence professionally and in good faith. Version 1.5.7 was released on 12 March 2026, with the developer providing written responses to all findings. Cairn Intelligence has reviewed the developer's responses and the updated build. The following reflects the current status of each finding.
+Following publication of this report, the application developer engaged professionally and in good faith. Version 1.5.7 was released on 12 March 2026, with the developer providing written responses to all findings. I reviewed the developer's responses and the updated build. The following reflects the current status of each finding.
 
 **Findings resolved in v1.5.7:**
 
@@ -394,7 +394,7 @@ Following publication of this report, the application developer engaged with Cai
 
 | Finding | Status |
 |---------|--------|
-| Finding 2 — VPN bypass rules | **Stands** — split tunnelling behaviour remains undisclosed to users. The developer defended this as necessary for app functionality. Cairn Intelligence accepts that split tunnelling is a legitimate feature but maintains that users must be clearly informed in the privacy policy or app description which traffic bypasses the VPN tunnel. This finding stands until disclosure is added. |
+| Finding 2 — VPN bypass rules | **Stands** — split tunnelling behaviour remains undisclosed to users. The developer defended this as necessary for app functionality. I accept that split tunnelling is a legitimate feature but maintain that users must be clearly informed in the privacy policy or app description which traffic bypasses the VPN tunnel. This finding stands until disclosure is added. |
 | Finding 3 — Java deserialization (RCE) | **Not addressed** — no response provided |
 | Finding 6 — Unauthenticated API | **Not addressed** — no response provided |
 | Findings 9–10 — Firebase / Sentry keys | **Accepted** — developer's defence accepted. These are operational keys for the developer's own infrastructure, not user data exposure. Downgraded to informational. |

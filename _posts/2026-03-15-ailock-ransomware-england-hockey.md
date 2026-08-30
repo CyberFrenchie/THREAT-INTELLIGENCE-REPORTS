@@ -17,7 +17,7 @@ author_profile: true
 |-------|---------|
 | **Report ID** | SDI-2026-002 |
 | **Date** | March 15, 2026 |
-| **Analyst** | Sam Dalgleish, Cairn Intelligence |
+| **Analyst** | Sam Dalgleish (CyberFrenchie) |
 | **Threat Category** | Ransomware / Double-Extortion |
 | **Threat Actor** | AiLock |
 | **Victim** | England Hockey (englandhockey.co.uk) |
@@ -33,7 +33,7 @@ On 12 March 2026, England Hockey — the national governing body for field hocke
 
 The threat actor claims to have exfiltrated approximately 129GB of data from England Hockey's systems prior to deploying ransomware. Under AiLock's standard double-extortion model, victims are given 72 hours to make initial contact and approximately five days to pay before stolen data is published publicly. England Hockey has confirmed it is investigating and is working with external specialists and law enforcement.
 
-This is the second UK victim attributed to AiLock identified by Cairn Intelligence. The group has been active since at least April 2025 and has claimed 23 victims across multiple countries and sectors as of the date of this report. The use of post-quantum cryptography (NTRUEncrypt) in this ransomware variant is a notable technical development that warrants monitoring.
+This is the second UK victim attributed to AiLock identified in my research. The group has been active since at least April 2025 and has claimed 23 victims across multiple countries and sectors as of the date of this report. The use of post-quantum cryptography (NTRUEncrypt) in this ransomware variant is a notable technical development that warrants monitoring.
 
 ---
 
@@ -44,7 +44,7 @@ AiLock is a ransomware-as-a-service (RaaS) or single-operator ransomware group f
 **Key characteristics:**
 - Active since approximately April 2025
 - 23 known victims as of 15 March 2026
-- Average delay between attack and public claim: ~404 days, suggesting extended dwell times on victim networks before disclosure (Cairn Intelligence calculation from ransomware.live victim records, 15 March 2026)
+- Average delay between attack and public claim: ~404 days, suggesting extended dwell times on victim networks before disclosure (Sam Dalgleish calculation from ransomware.live victim records, 15 March 2026)
 - Aggressive negotiation timeline: 72-hour initial response window, ~5 days to payment before data release
 - Targets organisations across Technology, Consumer Services, Manufacturing, Construction, and Public Sector
 
@@ -76,7 +76,7 @@ AiLock is a ransomware-as-a-service (RaaS) or single-operator ransomware group f
 | `AILock.yar` | YARA Rule | Available via ransomware.live — not reproduced here | Medium |
 | MD5 / SHA256 hashes | File Hashes | Available via ransomware.live — not verified independently | Low |
 
-> **Note:** Specific file hashes have not been independently verified by Cairn Intelligence at time of publication. Treat hash IOCs from third-party sources with medium confidence until corroborated against a confirmed sample.
+> **Note:** Specific file hashes have not been independently verified by Sam Dalgleish at time of publication. Treat hash IOCs from third-party sources with medium confidence until corroborated against a confirmed sample.
 
 ---
 
@@ -96,7 +96,7 @@ The DLS follows a standard ransomware leak site pattern — victims are listed w
 
 ### 4.2 Infrastructure Assessment
 
-Standard passive enumeration techniques (WHOIS, passive DNS, certificate transparency logs) are not applicable to Tor onion addresses — there is no registrant data, upstream hosting provider, or DNS record to query. Cairn Intelligence searched for clearnet infrastructure associated with AiLock across VirusTotal, Shodan, and ransomware.live; no clearnet domains, IPs, or associated infrastructure were identified at time of publication.
+Standard passive enumeration techniques (WHOIS, passive DNS, certificate transparency logs) are not applicable to Tor onion addresses — there is no registrant data, upstream hosting provider, or DNS record to query. I searched for clearnet infrastructure associated with AiLock across VirusTotal, Shodan, and ransomware.live; no clearnet domains, IPs, or associated infrastructure were identified at time of publication.
 
 The onion address has been cross-referenced against ransomware.live and confirmed as the active AiLock DLS. The NGINX server identification is sourced from ransomware.live metadata. No independent direct access to the DLS was performed.
 
@@ -141,7 +141,7 @@ AiLock employs double-extortion: data is stolen before encryption is deployed. T
 
 ## 6. Relevance to UK Organisations
 
-England Hockey is the second UK victim attributed to AiLock identified by Cairn Intelligence. The targeting of a UK membership organisation is notable — these bodies typically hold high volumes of personal data (names, addresses, dates of birth, contact details, payment records) across a large member base, creating significant ICO exposure in the event of a breach.
+England Hockey is the second UK victim attributed to AiLock identified in my research. The targeting of a UK membership organisation is notable — these bodies typically hold high volumes of personal data (names, addresses, dates of birth, contact details, payment records) across a large member base, creating significant ICO exposure in the event of a breach.
 
 **Organisations at elevated risk share these characteristics:**
 - Large member or customer databases
@@ -169,7 +169,7 @@ Under UK GDPR, a ransomware attack involving personal data exfiltration is almos
 
 **Overall Confidence: Medium**
 
-This report is based on open-source intelligence from published security research, ransomware tracking services, and media reporting. Cairn Intelligence has not independently analysed an AiLock malware sample or verified the specific file hashes listed on third-party platforms. Technical details (encryption algorithms, file extensions, ransom note filenames) are corroborated across multiple independent sources and are assessed as reliable.
+This report is based on open-source intelligence from published security research, ransomware tracking services, and media reporting. I have not independently analysed an AiLock malware sample or verified the specific file hashes listed on third-party platforms. Technical details (encryption algorithms, file extensions, ransom note filenames) are corroborated across multiple independent sources and are assessed as reliable.
 
 The 129GB data volume figure is based solely on the threat actor's own claim and has not been independently verified.
 
@@ -185,4 +185,4 @@ The 129GB data volume figure is based solely on the threat actor's own claim and
 
 ---
 
-*Cairn Intelligence — Paisley, Scotland — cairnintelligence.com — sam@cairnintelligence.com*
+*Sam Dalgleish (CyberFrenchie) — Paisley, Scotland — acrilox@gmail.com*

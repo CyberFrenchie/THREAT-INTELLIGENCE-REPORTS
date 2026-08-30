@@ -1,9 +1,9 @@
 remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: "cairn"
-title: "Cairn Intelligence"
-description: "Published threat intelligence research from Cairn Intelligence — OSINT-led investigations, infrastructure research, and IOC reporting for businesses worldwide."
-url: "https://reports.cairnintelligence.com"
-baseurl: ""
+minimal_mistakes_skin: "researcher"
+title: "Sam Dalgleish"
+description: "Personal threat intelligence research by Sam Dalgleish — OSINT-led investigations, vulnerability research, infrastructure analysis, and IOC reporting."
+url: "https://cyberfrenchie.github.io"
+baseurl: "/THREAT-INTELLIGENCE-REPORTS"
 
 plugins:
   - jekyll-include-cache
@@ -21,12 +21,9 @@ feed:
 author:
   name: "Sam Dalgleish"
 
-  bio: "Founder, Cairn Intelligence. Cybersecurity researcher specialising in threat intelligence and OSINT investigation. Published CVE researcher (CVE-2025-9548). BSc Digital Security & Forensics, Glasgow Caledonian University."
-  location: "Scotland"
+  bio: "Cybersecurity researcher and threat intelligence analyst. Published CVE researcher (CVE-2025-9548), final-year BSc Digital Security & Forensics student, with practical work across OSINT, fuzzing, malware analysis, SIEM, and responsible disclosure."
+  location: "Paisley, Scotland"
   links:
-    - label: "Cairn Intelligence"
-      icon: "fas fa-fw fa-globe"
-      url: "https://cairnintelligence.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/CyberFrenchie"
@@ -35,7 +32,7 @@ author:
       url: "https://linkedin.com/in/sam-dalgleish-334250306"
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:sam@cairnintelligence.com"
+      url: "mailto:acrilox@gmail.com"
 
 # -------------------------------------------------------
 # Defaults — apply author_profile sidebar to all pages
@@ -56,22 +53,8 @@ defaults:
       layout: single
       author_profile: true
 
-# -------------------------------------------------------
-# Analytics
-# -------------------------------------------------------
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: "G-M63130G1ZM"
-    anonymize_ip: false
-
-# -------------------------------------------------------
-# Site settings
-# -------------------------------------------------------
 locale: "en-GB"
 timezone: Europe/London
 github_username: CyberFrenchie
-twitter:
-  username: "cairnintel"
 search: true
 search_full_content: true
