@@ -16,6 +16,15 @@ feed:
   path: feed.xml
 
 # -------------------------------------------------------
+# Analytics
+# -------------------------------------------------------
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-CW5SR3R72C"
+    anonymize_ip: true
+
+# -------------------------------------------------------
 # Author Profile (shows in sidebar on every page)
 # -------------------------------------------------------
 author:
